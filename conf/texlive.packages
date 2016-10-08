@@ -1,7 +1,4 @@
 collection-fontsrecommended
-zapfding
-psnfss
-mdwfonts
-if­sym
-eu­rosym
-
+tocloft
+enumitem
+ifsym
