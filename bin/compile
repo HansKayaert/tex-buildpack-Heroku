@@ -116,15 +116,15 @@ build-step "Installing symbol"
 tlmgr install symbol
 # build-step "Installing if­sym"
 # tlmgr install if­sym
-build-step "Installing amssymb"
-tlmgr install amssymb
-build-step "Installing babel-dutch"
-tlmgr install babel-dutch
+# build-step "Installing amssymb"
+# tlmgr install amssymb
+# build-step "Installing babel-dutch"
+# tlmgr install babel-dutch
 build-step "Installing textcomp"
 tlmgr install textcomp
 build-step "Installing mathptmx"
 tlmgr install mathptmx
 build-step "Installing tocloft"
 tlmgr install tocloft
-build-step "Installing mathptmx"
+build-step "Installing enumitem"
 tlmgr install enumitem
