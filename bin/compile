@@ -110,8 +110,10 @@ echo 'export PATH=$HOME/.texlive/bin/x86_64-linux:$PATH' >> $PROFILE_D
 
 
 
-build-step "Installing mdwfonts"
-tlmgr install mdwfonts
+build-step "Installing zapfding"
+tlmgr install zapfding
+build-step "Installing symbol"
+tlmgr install symbol
 build-step "Installing if­sym"
 tlmgr install if­sym
 build-step "Installing amssymb"
