@@ -120,11 +120,11 @@ tlmgr install symbol
 # tlmgr install amssymb
 # build-step "Installing babel-dutch"
 # tlmgr install babel-dutch
-build-step "Installing textcomp"
-tlmgr install textcomp
-build-step "Installing mathptmx"
-tlmgr install mathptmx
-build-step "Installing tocloft"
+# build-step "Installing textcomp"
+# tlmgr install textcomp
+# build-step "Installing mathptmx"
+# tlmgr install mathptmx
+# build-step "Installing tocloft"
 tlmgr install tocloft
 build-step "Installing enumitem"
 tlmgr install enumitem
