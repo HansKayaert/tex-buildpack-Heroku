@@ -114,8 +114,8 @@ build-step "Installing zapfding"
 tlmgr install zapfding
 build-step "Installing symbol"
 tlmgr install symbol
-build-step "Installing if­sym"
-tlmgr install if­sym
+# build-step "Installing if­sym"
+# tlmgr install if­sym
 build-step "Installing amssymb"
 tlmgr install amssymb
 build-step "Installing babel-dutch"
