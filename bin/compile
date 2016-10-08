@@ -13,7 +13,7 @@ TEXLIVE_INSTALLER_URL="http://mirror.ctan.org/systems/texlive/tlnet/install-tl-u
 
 TEXLIVE_HOME=$BUILD_DIR/.texlive
 TEXLIVE_CACHE=$CACHE_DIR/.texlive
-TOOL_CACHE=$CACHE_DIR/.tools 
+TOOL_CACHE=$CACHE_DIR/.tools
 TOOL_BIN=$CACHE_DIR/.tools/bin
 TEMPDIR=$TEMP/.texlive
 PATH=$TEXLIVE_HOME/bin/x86_64-linux:$TOOL_BIN:$PATH
@@ -25,7 +25,7 @@ source $BIN_DIR/utils
 # Prepare the various paths
 mkdir -p $TEXLIVE_HOME
 mkdir -p $TEXLIVE_CACHE
-mkdir -p $TOOL_BIN 
+mkdir -p $TOOL_BIN
 mkdir -p $TOOL_CACHE
 mkdir -p `dirname $PROFILE_D`
 
@@ -35,7 +35,7 @@ if [ ! -f $TOOL_BIN/wget ]; then
     build-info "download"
     WGET_BUILD=/tmp/wget-build/
     WGET_URL="http://ftp.gnu.org/gnu/wget/wget-1.16.tar.gz"
-    mkdir -p $WGET_BUILD 
+    mkdir -p $WGET_BUILD
     cd $WGET_BUILD
     curl $WGET_URL -L -s -o - | tar -xzf - -C $WGET_BUILD
 
@@ -66,15 +66,15 @@ if [ ! `which pdflatex` ]; then
 
     PROF=$BIN_DIR/../conf/texlive.profile
 
-    echo "TEXDIR $TEXLIVE_HOME" >> $PROF 
+    echo "TEXDIR $TEXLIVE_HOME" >> $PROF
     echo "TEXMFCONFIG $TEXLIVE_HOME/var/texmf-config" >> $PROF
-    echo "TEXMFHOME $TEXLIVE_HOME/var/texmf" >> $PROF 
-    echo "TEXMFLOCAL $TEXLIVE_HOME/texmf-local" >> $PROF 
-    echo "TEXMFSYSCONFIG $TEXLIVE_HOME/texmf-config" >> $PROF 
-    echo "TEXMFSYSVAR $TEXLIVE_HOME/texmf-var" >> $PROF 
-    echo "TEXMFVAR $TEXLIVE_HOME/var/texmf-var" >> $PROF 
+    echo "TEXMFHOME $TEXLIVE_HOME/var/texmf" >> $PROF
+    echo "TEXMFLOCAL $TEXLIVE_HOME/texmf-local" >> $PROF
+    echo "TEXMFSYSCONFIG $TEXLIVE_HOME/texmf-config" >> $PROF
+    echo "TEXMFSYSVAR $TEXLIVE_HOME/texmf-var" >> $PROF
+    echo "TEXMFVAR $TEXLIVE_HOME/var/texmf-var" >> $PROF
 
-    cd $TEXLIVE_HOME 
+    cd $TEXLIVE_HOME
 
     ./install-tl --profile=$PROF
 fi
@@ -107,3 +107,22 @@ fi
 
 # Set up the environment for runtimes now that compilation has finished
 echo 'export PATH=$HOME/.texlive/bin/x86_64-linux:$PATH' >> $PROFILE_D
+
+
+
+build-step "Installing mdwfonts"
+tlmgr install mdwfonts
+build-step "Installing if­sym"
+tlmgr install if­sym
+build-step "Installing amssymb"
+tlmgr install amssymb
+build-step "Installing babel-dutch"
+tlmgr install babel-dutch
+build-step "Installing textcomp"
+tlmgr install textcomp
+build-step "Installing mathptmx"
+tlmgr install mathptmx
+build-step "Installing tocloft"
+tlmgr install tocloft
+build-step "Installing mathptmx"
+tlmgr install enumitem
