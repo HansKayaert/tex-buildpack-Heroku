@@ -115,9 +115,9 @@ build-step "Installing zapfding"
 tlmgr install zapfding
 build-step "Installing symbol"
 tlmgr install symbol
-build-step "Installing ti­tlesec"
-tlmgr install titlessec
-build-step "Installing if­sym"
+build-step "Installing titlesec"
+tlmgr install titlesec
+build-step "Installing ifsym"
 tlmgr install ifsym
 # build-step "Installing amssymb"
 # tlmgr install amssymb
