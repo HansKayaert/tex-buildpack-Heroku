@@ -109,6 +109,7 @@ fi
 echo 'export PATH=$HOME/.texlive/bin/x86_64-linux:$PATH' >> $PROFILE_D
 
 
+set -x  #start debugging
 
 build-step "Installing zapfding"
 tlmgr install zapfding
@@ -130,3 +131,4 @@ tlmgr install ifsym
 tlmgr install tocloft
 build-step "Installing enumitem"
 tlmgr install enumitem
+set +x      # stop debugging from here
